@@ -66,7 +66,7 @@ class DoctorController {
                     JSON_UNQUOTE(JSON_EXTRACT(a.meta_value, '$[0]')) as academic_degree_value,
                     JSON_UNQUOTE(JSON_EXTRACT(m.meta_value, '$[0]')) as medical_specialty,
                     JSON_UNQUOTE(JSON_EXTRACT(e.meta_value, '$[0]')) as experience,
-                    REPLACE(JSON_UNQUOTE(JSON_EXTRACT(co.meta_value, '$[0]')), '<img src=\"/storage', '<img src=\"https://aih.com.vn/storage') as content_doctor
+                    REPLACE(JSON_UNQUOTE(JSON_EXTRACT(co.meta_value, '$[0]')), 'src=\"/storage', 'src=\"https://aih.com.vn/storage') as content_doctor
                 FROM doctors d
                     INNER JOIN doctors_post_categories dc ON dc.doctor_id = d.id
                     INNER JOIN doctors_categories c ON c.id = dc.category_id
@@ -194,7 +194,7 @@ class DoctorController {
                             JSON_UNQUOTE(JSON_EXTRACT(a.meta_value, '$[0]')) as academic_degree_value,
                             JSON_UNQUOTE(JSON_EXTRACT(m.meta_value, '$[0]')) as medical_specialty,
                             JSON_UNQUOTE(JSON_EXTRACT(e.meta_value, '$[0]')) as experience,
-                            REPLACE(JSON_UNQUOTE(JSON_EXTRACT(co.meta_value, '$[0]')), '<img src=\"/storage', '<img src=\"https://aih.com.vn/storage') as content_doctor
+                            REPLACE(JSON_UNQUOTE(JSON_EXTRACT(co.meta_value, '$[0]')), 'src=\"/storage', 'src=\"https://aih.com.vn/storage') as content_doctor
                         FROM doctors d
                             INNER JOIN doctors_post_categories dc ON dc.doctor_id = d.id
                             INNER JOIN doctors_categories c ON c.id = dc.category_id

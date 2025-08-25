@@ -68,46 +68,7 @@ $router->get('api/v1/health', function() {
     $controller->status();
 }, ['security','rate_limit']);
 
-
-// // API Documentation endpoint
-// $router->get('', function() {
-//     echo json_encode([
-//         'success' => true,
-//         'message' => 'AIH Healthcare API',
-//         'version' => '1.0.0',
-//         'documentation' => [
-//             'health' => 'GET /api/v1/health - Health check',
-//             'test' => 'GET /api/v1/test-db - Database test',
-//             'doctors' => [
-//                 'list' => 'GET /api/v1/doctors - List all doctors',
-//                 'detail' => 'GET /api/v1/doctors/{id} - Get doctor by ID'
-//             ],
-//             'specialties' => [
-//                 'list' => 'GET /api/v1/specialties - List all specialties',
-//                 'detail' => 'GET /api/v1/specialties/{id} - Get specialty by ID'
-//             ],
-//             'posts' => [
-//                 'list' => 'GET /api/v1/posts - List all posts',
-//                 'detail' => 'GET /api/v1/posts/{id} - Get post by ID'
-//             ],
-//             'services' => [
-//                 'list' => 'GET /api/v1/services - List all services',
-//                 'detail' => 'GET /api/v1/services/{id} - Get service by ID'
-//             ],
-//             'packages' => [
-//                 'list' => 'GET /api/v1/packages - List all packages',
-//                 'detail' => 'GET /api/v1/packages/{id} - Get package by ID'
-//             ]
-//         ],
-//         'parameters' => [
-//             'pagination' => 'page, page_size (default: 1, 10)',
-//             'language' => 'lang (vi|en, default: vi)',
-//             'filters' => 'Various filters based on endpoint'
-//         ]
-//     ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-// }, ['security']);
-
-// Simple endpoint handlers with security
+// Doctors endpoints
 $router->get('api/v1/doctors', function() {
     $page = (int)($_GET['page'] ?? 1);
     $page_size = (int)($_GET['page_size'] ?? 10);
